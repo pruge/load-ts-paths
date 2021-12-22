@@ -1,6 +1,6 @@
 {
   "name": "load-ts-paths",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "load path of tsconfig.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

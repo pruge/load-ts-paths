@@ -14,13 +14,13 @@ yarn add babel-plugin-module-resolver load-ts-paths
 const {loadTsPaths} = require('load-ts-paths')
 
 module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
+  presets: [...],
   plugins: [
     'react-native-reanimated/plugin',
     [
       'babel-plugin-module-resolver',
       {
-        root: ['./src'],
+        root: ['./src'],  // baseUrl of tsconfig.ts
         alias: loadTsPaths('./tsconfig.json'),
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },

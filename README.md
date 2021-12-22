@@ -1,43 +1,30 @@
 # load-ts-paths
-tsconfig.json에 정의된 paths 정보를 읽어와 metro, webpack에서 사용할 수 있게 한다.
+Read the paths information defined in tsconfig.json and make it usable in babel-plugin-module-resolver.
+
+## install
+```js
+yarn add babel-plugin-module-resolver load-ts-paths
+```
 
 ## usage
 
-> metro.config.js
+> babel.config.js
 
 ```js
-const { loadTsPaths } = require('load-ts-paths')
+const {loadTsPaths} = require('load-ts-paths')
 
 module.exports = {
-  ...
-  resolver: {
-    extraNodeModules: loadTsPaths('./tsconfig.json'),
-  },
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    'react-native-reanimated/plugin',
+    [
+      'babel-plugin-module-resolver',
+      {
+        root: ['./src'],
+        alias: loadTsPaths('./tsconfig.json'),
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    ],
+  ],
 }
 ```
-
-> webpack.config.js
-
-```js
-const { loadTsPaths } = require('load-ts-paths')
-
-module.exports = {
-  ...
-  resolve: {
-    ...
-    alias: loadTsPaths('./tsconfig.json')
-  }
-}
-```
-
-> next.config.js
-
-```js
-const { loadTsPaths } = require('load-ts-paths')
-
-
-webpack(config, options) {
-  loadTsPaths('./tsconfig.json', config)
-}
-```
-

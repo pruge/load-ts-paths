@@ -1,0 +1,40 @@
+{
+  "name": "load-ts-paths",
+  "version": "0.0.1",
+  "description": "load path of tsconfig.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build",
+    "publish-lib": "npm run build && npm publish",
+    "publish-beta": "npm run build && npm publish --tag beta",
+    "publish-dryrun": "npm run build && npm publish --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pruge/load-ts-paths.git"
+  },
+  "keywords": [
+    "demo",
+    "typescript",
+    "library",
+    "hello world"
+  ],
+  "author": "Daniel Niederberger <bersling@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pruge/load-ts-paths/issues"
+  },
+  "homepage": "https://github.com/pruge/load-ts-paths#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.2"
+  },
+  "dependencies": {
+    "comment-json": "^4.1.1",
+    "typescript": "^4.2.3"
+  }
+}

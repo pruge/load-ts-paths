@@ -3,7 +3,7 @@ Read the paths information defined in tsconfig.json and make it usable in babel-
 
 ## install
 ```js
-yarn add babel-plugin-module-resolver load-ts-paths
+yarn add -D babel-plugin-module-resolver load-ts-paths
 ```
 
 ## usage

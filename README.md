@@ -20,7 +20,7 @@ module.exports = {
     [
       'babel-plugin-module-resolver',
       {
-        root: ['./src'],  // baseUrl of tsconfig.ts
+        root: ['./src'],  // baseUrl of tsconfig.json
         alias: loadTsPaths('./tsconfig.json'),
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },

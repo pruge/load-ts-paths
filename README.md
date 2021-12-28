@@ -16,7 +16,6 @@ const {loadTsPaths} = require('load-ts-paths')
 module.exports = {
   presets: [...],
   plugins: [
-    'react-native-reanimated/plugin',
     [
       'babel-plugin-module-resolver',
       {
